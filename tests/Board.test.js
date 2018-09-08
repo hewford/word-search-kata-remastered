@@ -65,5 +65,9 @@ describe('Board setup should build an array that represents a square board', () 
         }))
     });
 
+    test("Set up array's length should be equal to the length of the sub arrays", () => {
+        expect(board.setUp().length).toEqual(board.setUp()[0].length)
+    });
+
 })
 
