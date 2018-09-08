@@ -1,6 +1,6 @@
 const BOARD_AS_SINGLE_STRING = ''
 
-const WORDS_TO_SEARCH_FOR = 'AZD3! $-C'
+const WORDS_TO_SEARCH_FOR = 'AZD CEF'
 
 module.exports = {
     BOARD_AS_SINGLE_STRING,
