@@ -11,6 +11,7 @@ class Board {
     }
 
     setUp() {
+        this.board=[[],[]]
         return this.board
     }
 }

@@ -44,16 +44,25 @@ describe("Board should have an array of letters that represent the board", () =>
 
 describe('Board setup should build an array that represents a square board', () => {
 
-let board;
-const letters = 'ASDFGHJKL'
+    let board;
+    const letters = 'ASDFGHJKL'
 
-beforeEach(() => {
-    board = new Board()
-    board.setUp(null, letters)
-});
+    beforeEach(() => {
+        board = new Board()
+        board.setUp(null, letters)
+    });
 
-test('Set up should produce an array equal to the board state', () => {
-    expect(board.setUp()).toBe(board.board)
+    test('Set up should produce an array equal to the board state', () => {
+        expect(board.setUp()).toBe(board.board)
+    });
+
+    test('Set up should produce an array with subarrays', () => {
+        expect(board.setUp().map((row) => {
+            return row.__proto__.constructor.name
+        },['Array']))
+        .toEqual(board.board.map(()=>{
+            return 'Array'
+        }))
     });
 
 })
