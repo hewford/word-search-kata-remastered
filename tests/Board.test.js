@@ -34,12 +34,12 @@ describe("Board should have an array of letters that represent the board", () =>
     })
 
     test("letters should be an array of letters passed to the class Board", () => {
-        const board = new Board(null, 'QWERTY')
+        const board = new Board(null, 'Q W E R T Y')
         expect(board.letters).toEqual(['Q', 'W', 'E', 'R', 'T', 'Y'])
     })
 
     test("class Board should contain a board state who's value is an array", () => {
-        const board = new Board(null, 'QWERTY')
+        const board = new Board(null, 'Q W E R T Y')
         expect(board.board).toEqual([])
     })
 
@@ -48,7 +48,7 @@ describe("Board should have an array of letters that represent the board", () =>
 describe('Board setup should build an array that represents a square board', () => {
 
     let board
-    const letters = 'ASDFGHJKL'
+    const letters = 'A S D F G H J K L'
 
     beforeEach(() => {
         board = new Board(null, letters)
@@ -82,7 +82,7 @@ describe('Board setup should build an array that represents a square board', () 
         }))
     })
 
-    test("the board first subarray should equal the first part of the letters array", () => {
+    test("Set up should transform the letters into a square board", () => {
         expect(board.board).toEqual([
             ['A','S','D'],
             ['F','G','H'],
@@ -90,4 +90,36 @@ describe('Board setup should build an array that represents a square board', () 
     })
 
 })
+
+test("testing the .reduce vs the for-loop with the config variables", () => {
+
+    const letters = configVariables.BOARD_AS_SINGLE_STRING
+    const words = configVariables.WORDS_TO_SEARCH_FOR
+
+    const board = new Board(words, letters)
+    
+    board.setUp()
+
+    let mockBoard = []
+
+    const rowLength = Math.sqrt(letters.split(' ').length)
+    let lettersIndex = 0;
+
+    for (let i = 0; i < rowLength; i++) {
+      let row = []
+
+      for (let j = 0; j < rowLength; j++) {
+        row.push(letters.split(' ')[lettersIndex])
+        lettersIndex++;
+      }
+
+      mockBoard[i] = row
+    }
+    
+    expect(board.board).toEqual(mockBoard)
+
+})
+
+
+
 
