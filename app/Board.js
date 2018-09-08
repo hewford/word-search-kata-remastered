@@ -3,7 +3,8 @@ const configVariables = require('../config')
 class Board {
 
     constructor(words) {
-      this.wordsToSearchFor = words || []
+      this.wordsToSearchFor = words ? words.split(' ') : []
+        
   
     }
 }
