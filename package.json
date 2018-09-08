@@ -1,0 +1,23 @@
+{
+  "name": "word-search-kata-remastered",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "testwatch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hewford/word-search-kata-remastered.git"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hewford/word-search-kata-remastered/issues"
+  },
+  "homepage": "https://github.com/hewford/word-search-kata-remastered#readme"
+}
