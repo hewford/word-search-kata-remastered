@@ -9,6 +9,10 @@ class Board {
 
         this.board = []
     }
+
+    setUp() {
+        return this.board
+    }
 }
 
 module.exports = Board;

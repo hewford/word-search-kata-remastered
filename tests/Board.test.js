@@ -21,9 +21,9 @@ describe("Board should have an array of words to search for", () => {
         })).toBe(true)
       });
     
-  });
+});
 
-  describe("Board should have an array of letters that represent the board", () => {
+describe("Board should have an array of letters that represent the board", () => {
   
     test("letters should be an array", () => {
         const board = new Board()
@@ -35,10 +35,26 @@ describe("Board should have an array of words to search for", () => {
         expect(board.letters).toEqual(['Q', 'W', 'E', 'R', 'T', 'Y'])
     });
 
-    test("class Board should contain a board property who's value is an array", () => {
+    test("class Board should contain a board state who's value is an array", () => {
         const board = new Board(null, 'QWERTY')
         expect(board.board).toEqual([])
     });
 
-  });
+});
+
+describe('Board setup should build an array that represents a square board', () => {
+
+let board;
+const letters = 'ASDFGHJKL'
+
+beforeEach(() => {
+    board = new Board()
+    board.setUp(null, letters)
+});
+
+test('Set up should produce an array equal to the board state', () => {
+    expect(board.setUp()).toBe(board.board)
+    });
+
+})
 
