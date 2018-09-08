@@ -9,6 +9,9 @@ class SearchDirection {
 
             case SEARCH_LEFT:
                 return [letterIndex-i, rowIndex]
+
+            case SEARCH_UP:
+                return [letterIndex, rowIndex-i]
         }
     }
 }

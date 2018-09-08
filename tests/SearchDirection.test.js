@@ -5,12 +5,16 @@ describe("targetCoordinates(rowIndex, letterIndex, i, direction) function in cla
     
     const searchDirection = new SearchDirection()
 
-    test("searching right should search the next X coordinate", () => {
+    test("searching RIGHT should search the next X coordinate", () => {
         expect(searchDirection.targetCoordinates(1, 1, 1, SEARCH_RIGHT)).toEqual([2, 1])
     })
 
-    test("searching left should search the previous X coordinate", () => {
+    test("searching LEFT should search the previous X coordinate", () => {
         expect(searchDirection.targetCoordinates(1, 1, 1, SEARCH_LEFT)).toEqual([0, 1])
+    })
+
+    test("searching UP should search the previous Y coordinate", () => {
+        expect(searchDirection.targetCoordinates(1, 1, 1, SEARCH_UP)).toEqual([1, 0])
     })
 
 })
