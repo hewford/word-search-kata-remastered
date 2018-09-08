@@ -22,3 +22,12 @@ describe("Board should have an array of words to search for", () => {
       });
     
   });
+
+  describe("Board should have an array of letters that represent the board", () => {
+  
+    test("letters should be an array", () => {
+        const board = new Board()
+        expect(board.letters).toEqual([])
+    });
+    
+  });
