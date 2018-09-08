@@ -16,10 +16,13 @@ describe("Board should have an array of words to search for", () => {
     test("words to search array elements should be strings", () => {
         const board = new Board(configVariables.WORDS_TO_SEARCH_FOR)
 
-        expect(board.wordsToSearchFor.every(function(item) {
-          return typeof item === "string"
-        })).toBe(true)
-      })
+        expect(board.wordsToSearchFor.map((item) => {
+          return typeof item
+        }))
+        .toEqual(board.wordsToSearchFor.map((item) => {
+            return 'string'
+        }))
+    })
     
 })
 
@@ -77,6 +80,13 @@ describe('Board setup should build an array that represents a square board', () 
         .toEqual(board.board.map(()=>{
             return Math.sqrt(board.letters.length)
         }))
+    })
+
+    test("the board first subarray should equal the first part of the letters array", () => {
+        expect(board.board).toEqual([
+            ['A','S','D'],
+            ['F','G','H'],
+            ['J','K','L']])
     })
 
 })
