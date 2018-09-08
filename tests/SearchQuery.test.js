@@ -1,6 +1,6 @@
 const Board = require('../app/Board')
 const configVariables = require('../config')
-const SearchQuery = require('../app/SearchQuery');
+const SearchQuery = require('../app/SearchQuery')
 
 describe("testing the set up of the search query", () => {
     let searchQuery;
@@ -25,6 +25,6 @@ describe("testing the set up of the search query", () => {
         expect(Object.keys(searchQuery.solution))
         .toEqual(board.wordsToSearchFor.map((word) => {
             return word
-          }))
+        }))
     })
 })

@@ -1,11 +1,11 @@
-const Board = require('../app/Board');
-const configVariables = require('../config');
+const Board = require('../app/Board')
+const configVariables = require('../config')
 
 class SearchQuery {
   constructor(words) {
     // initialize the object that will contain the solution
     this.solution = words.reduce((solution, word) => {
-        solution[word] = '';
+        solution[word] = ''
         return solution
     }, {})
 
@@ -13,4 +13,4 @@ class SearchQuery {
   }
 }
 
-module.exports = SearchQuery;
+module.exports = SearchQuery
