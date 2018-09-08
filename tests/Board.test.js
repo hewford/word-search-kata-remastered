@@ -29,5 +29,10 @@ describe("Board should have an array of words to search for", () => {
         const board = new Board()
         expect(board.letters).toEqual([])
     });
+
+    test("letters should be an array of letters passed to the class Board", () => {
+        const board = new Board(null, 'QWERTY')
+        expect(board.letters).toEqual(['Q', 'W', 'E', 'R', 'T', 'Y'])
+    });
     
   });
