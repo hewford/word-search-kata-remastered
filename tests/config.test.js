@@ -1,8 +1,22 @@
 const configVariables = require('../config');
 
-test("board should be initialized as a string", () => {
-    expect(typeof configVariables.BOARD_AS_SINGLE_STRING).toBe('string')
-});
+describe("config variable board as a single string should be formatted correctly", () => {
+    test("board should be initialized as a string", () => {
+        expect(typeof configVariables.BOARD_AS_SINGLE_STRING).toBe('string')
+    });
+    
+    test("board as a string shoud have a length greater than the longest word squared", () => {
+        const longestWord = configVariables.WORDS_TO_SEARCH_FOR.split(' ').sort(function(a, b) {
+          return b.length - a.length;
+        })[0]
+
+        const minLengthOfBoardAsAString = longestWord.length * longestWord.length
+
+        expect(configVariables.BOARD_AS_SINGLE_STRING.length).toBeGreaterThan(minLengthOfBoardAsAString)
+    });
+})
+
+
 
 describe("config variable words searching for should be formatted correctly", () => {
 
@@ -33,7 +47,7 @@ describe("config variable words searching for should be formatted correctly", ()
     test("variable words searching for shortest word should be at least 3 characters long", () => {
         const shortestWord = configVariables.WORDS_TO_SEARCH_FOR.split(' ').sort(function(a, b) {
             return a.length - b.length;
-          })[0];
+          })[0]
           
         expect(shortestWord.length).toBeGreaterThan(2)
     });
@@ -42,4 +56,3 @@ describe("config variable words searching for should be formatted correctly", ()
         expect(configVariables.WORDS_TO_SEARCH_FOR).toBe(configVariables.WORDS_TO_SEARCH_FOR.replace(/[^A-Za-z\s]/g,''))
     });
 })
-
