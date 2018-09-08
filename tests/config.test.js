@@ -8,3 +8,7 @@ test("words searching for should be initialized as a string", () => {
     expect(typeof configVariables.WORDS_TO_SEARCH_FOR).toBe('string')
 });
 
+test("words searching for have content", () => {
+    expect(configVariables.WORDS_TO_SEARCH_FOR.length).toBeGreaterThan(0)
+});
+
