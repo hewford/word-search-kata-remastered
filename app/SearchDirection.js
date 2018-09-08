@@ -7,17 +7,22 @@ class SearchDirection {
             case SEARCH_RIGHT:
                 return [letterIndex+i, rowIndex]
 
+            case SEARCH_DOWN_AND_RIGHT:
+                return [letterIndex+1, rowIndex+i]
+
+            case SEARCH_DOWN:
+                return [letterIndex, rowIndex+i]
+
             case SEARCH_LEFT:
                 return [letterIndex-i, rowIndex]
 
             case SEARCH_UP:
                 return [letterIndex, rowIndex-i]
 
-            case SEARCH_DOWN:
-                return [letterIndex, rowIndex+i]
-
             case SEARCH_UP_AND_RIGHT:
                 return [letterIndex+1, rowIndex-i]
+
+            
         }
     }
 }

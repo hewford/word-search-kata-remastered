@@ -25,6 +25,8 @@ describe("targetCoordinates(rowIndex, letterIndex, i, direction) function in cla
         expect(searchDirection.targetCoordinates(1, 1, 1, SEARCH_UP_AND_RIGHT)).toEqual([2, 0])
     })
 
-    
+    test("searching DOWN and RIGHT should search the next X coordinate and next Y coordinate", () => {
+        expect(searchDirection.targetCoordinates(1, 1, 1, SEARCH_DOWN_AND_RIGHT)).toEqual([2, 2])
+    })
 
 })
