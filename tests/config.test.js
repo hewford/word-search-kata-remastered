@@ -12,3 +12,7 @@ test("words searching for have content", () => {
     expect(configVariables.WORDS_TO_SEARCH_FOR.length).toBeGreaterThan(0)
 });
 
+test("words searching should not begin with a space", () => {
+    expect(configVariables.WORDS_TO_SEARCH_FOR[0]).not.toBe(' ')
+});
+
