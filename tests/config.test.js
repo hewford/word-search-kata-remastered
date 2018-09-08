@@ -16,7 +16,7 @@ describe("config variable board as a single string should be formatted correctly
     })
 
     test("the square root of the board as a single string has a remainder to 0 to represent a square board", () => {
-        expect(Math.sqrt(configVariables.BOARD_AS_SINGLE_STRING.length) % 1).toBe(0)
+        expect(Math.sqrt(configVariables.BOARD_AS_SINGLE_STRING.split(' ').length) % 1).toBe(0)
     })
 
     test('board should only contain letters and spaces to separate the words', () => {
