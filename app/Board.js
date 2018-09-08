@@ -6,8 +6,8 @@ class Board {
         this.wordsToSearchFor = words ? words.split(' ') : []
 
         this.letters = letters ? letters.split('') : []
-        
-  
+
+        this.board = []
     }
 }
 
