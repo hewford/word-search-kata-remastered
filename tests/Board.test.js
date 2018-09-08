@@ -8,10 +8,17 @@ describe("Board should have an array of words to search for", () => {
         expect(board.wordsToSearchFor).toEqual([])
     });
 
-    test("words to search should be an array of words passed through", () => {
+    test("words to search should be an array of words passed to the class Board", () => {
         const board = new Board('DICE FUN JAVA')
         expect(board.wordsToSearchFor).toEqual(['DICE', 'FUN', 'JAVA'])
     });
-    
 
+    test("words to search array elements should be strings", () => {
+        const board = new Board(configVariables.WORDS_TO_SEARCH_FOR)
+
+        expect(board.wordsToSearchFor.every(function(item) {
+          return typeof item === "string"
+        })).toBe(true)
+      });
+    
   });
