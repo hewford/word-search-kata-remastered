@@ -19,3 +19,11 @@ test("config variable words searching should not begin with a space", () => {
 test("config variable words searching should not end with a space", () => {
     expect(configVariables.WORDS_TO_SEARCH_FOR[configVariables.WORDS_TO_SEARCH_FOR.length-1]).not.toBe(' ')
 });
+
+test("config variable words searching should not end with a space", () => {
+    expect(configVariables.WORDS_TO_SEARCH_FOR[configVariables.WORDS_TO_SEARCH_FOR.length-1]).not.toBe(' ')
+});
+
+test("config variable words should be separated by a space to be able to create an array of more than one word", () => {
+    expect(configVariables.WORDS_TO_SEARCH_FOR.split(' ').length).toBeGreaterThan(1)
+});
