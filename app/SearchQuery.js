@@ -16,23 +16,54 @@ class SearchQuery {
 
   startSearchQuery(word, board) {
 
-    
+    const foundWord = board.reduce((foundWord, row, rowIndex) => {
 
-    let foundWord = null
-
-    for (let rowIndex = 0; rowIndex < board.length; rowIndex++) {
       if (foundWord) {
-        break
+        return foundWord
       }
-      for (let letterIndex = 0; letterIndex < board[rowIndex].length; letterIndex++) {
+      foundWord = row.reduce((foundWord, letter, letterIndex) => {
+
         if (foundWord) {
-          break
-        } else if (board[rowIndex][letterIndex] === word[0]) {
-          foundWord = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_DOWN)
+          return foundWord;
+
+        } else if (word[0] === letter) {
+
+          /* === SEARCH RIGHT ===*/
+          const searchRight = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_RIGHT)
+          if (searchRight) {
+            return searchRight
+          }
+
+          /* === SEARCH LEFT ===*/
+
+          /* === SEARCH UP ===*/
+
+          /* === SEARCH DOWN ===*/
+          const searchDown = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_DOWN)
+          if (searchDown) {
+            return searchDown
+          }
+
+          /* === SEARCH DOWN & RIGHT ===*/
+
+          /* === SEARCH DOWN & LEFT ===*/
+
+          /* === SEARCH UP & RIGHT ===*/
+
+          /* === SEARCH UP & LEFT ===*/
+
+          return foundWord
+        } else {
+          return null
         }
-      }
-    }
+      }, null)
+      
+      return foundWord
+      
+    }, null)
+
     return this.solution[word] = foundWord
+
   }
 }
 

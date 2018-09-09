@@ -30,7 +30,8 @@ describe("testing the set up of the search query", () => {
 })
 
 describe("Search Query should be able to find a word and its coordinates", () => {
-    const searchQuery = new SearchQuery(['A', 'EAT'])
+    const words = ['A', 'AIL', 'BEE', 'RIB', 'EAT', 'ABS', 'EAR', 'TIE', 'BIT']
+    const searchQuery = new SearchQuery(words)
     const board = [
         ['Z', 'Z', 'Z', 'S'],
         ['E', 'E', 'B', 'B'],
@@ -48,4 +49,9 @@ describe("Search Query should be able to find a word and its coordinates", () =>
     test("search query should be able to find all the coordinates of the word searching DOWN", () => {
         expect(searchQuery.startSearchQuery('EAT', board)).toEqual(['(1, 1)', '(1, 2)', '(1, 3)'])
     })
+
+    test("search query should be able to find all the coordinates of the word searching RIGHT", () => {
+        expect(searchQuery.startSearchQuery('EBB', board)).toEqual(['(1, 1)', '(2, 1)', '(3, 1)'])
+    })
+
 })
