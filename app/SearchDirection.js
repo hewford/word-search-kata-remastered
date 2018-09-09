@@ -34,7 +34,7 @@ class SearchDirection {
             let targetCoordinate = this.targetCoordinates(rowIndex, letterIndex, i, direction)
 
             // if the row does not exist, don't search for next coordinates
-            if(!board[targetCoordinate[1]]){
+            if (!board[targetCoordinate[1]]) {
                 return coordinates
             }
             
