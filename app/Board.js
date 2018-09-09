@@ -1,7 +1,6 @@
 const configVariables = require('../config')
 
 class Board {
-
     constructor(words, letters) {
         this.wordsToSearchFor = words ? words.split(' ') : []
         this.letters = letters ? letters.split(' ') : []
@@ -10,7 +9,6 @@ class Board {
 
     setUp() {
         const setUp = this.letters.reduce((setUp, letter, index) => {
-
             if (index % Math.sqrt(this.letters.length) === 0 && index !== 0) {
                 setUp.currentRowIndex++
                 setUp.board[setUp.currentRowIndex] = []

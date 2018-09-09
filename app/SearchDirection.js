@@ -1,7 +1,6 @@
 const { SEARCH_RIGHT, SEARCH_LEFT, SEARCH_UP, SEARCH_DOWN, SEARCH_UP_AND_RIGHT, SEARCH_UP_AND_LEFT, SEARCH_DOWN_AND_LEFT, SEARCH_DOWN_AND_RIGHT } = require('../config/directions')
 
 class SearchDirection {
-
     targetCoordinates(rowIndex, letterIndex, i, direction) {
         switch (direction) {
             case SEARCH_RIGHT:
@@ -31,9 +30,7 @@ class SearchDirection {
     }
 
     search (word, board, letterIndex, rowIndex, direction) {
-        
         const foundWord = word.split('').reduce((coordinates, letter, i) => {
-
             let targetCoordinate = this.targetCoordinates(rowIndex, letterIndex, i, direction)
 
             // if the row does not exist, don't search for next coordinates
