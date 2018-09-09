@@ -31,18 +31,23 @@ describe("testing the set up of the search query", () => {
 
 describe("Search Query should be able to find a word and its coordinates", () => {
     const words = ['A', 'AIL', 'BEE', 'RIB', 'EAT', 'ABS', 'EAR', 'TIE', 'BIT']
-    const searchQuery = new SearchQuery(words)
+    let searchQuery
     const board = [
         ['Z', 'Z', 'Z', 'S'],
         ['E', 'E', 'B', 'B'],
         ['Z', 'A', 'I', 'L'],
         ['Z', 'T', 'R', 'T']]
 
+    beforeEach(() => {
+        searchQuery = new SearchQuery(words)
+    })
+
     test("search query should be able to find the first letter", () => {
         expect(searchQuery.startSearchQuery('A', board)).toEqual(["(1, 2)"])
     })
 
     test("search query should be able to find the first letter and store in the state solution's matching property", () => {
+        searchQuery.startSearchQuery('A', board)
         expect(searchQuery.solution['A']).toEqual(searchQuery.startSearchQuery('A', board))
     })
 
