@@ -40,8 +40,12 @@ describe("targetCoordinates(y, x, i, direction) function in class SearchDirectio
 
 describe("checkTargetCoordinate should take in a letter that is searching for, a letter being queried, and two coordinates to check to see if that coordinate matches", () => {
 
-    test("searching a target coordinate should return the coordinate as a string if the letters match", () => {
+    test("searching a target coordinate should return the coordinate as a string when the letters match", () => {
         expect(searchDirection.checkTargetedCoordinate('A', 'A', 2, 3)).toEqual('(2, 3)')
+    })
+
+    test("searching a target coordinate should return null when the letters do not match", () => {
+        expect(searchDirection.checkTargetedCoordinate('A', 'B', 2, 3)).toEqual(null)
     })
 
 })

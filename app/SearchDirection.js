@@ -31,9 +31,14 @@ class SearchDirection {
     }
 
     checkTargetedCoordinate(letterSearchingFor, letterQueried, coordinateX, coordinateY) {
-
-        return '(' + (coordinateX) + ', ' + (coordinateY) + ')'
-    }
+        // if next letter is found, store the coordinate
+        if (letterSearchingFor === letterQueried) {
+    
+          return '(' + (coordinateX) + ', ' + (coordinateY) + ')'
+        } else {
+          return null
+        }
+      }
 }
 
 module.exports = SearchDirection;
