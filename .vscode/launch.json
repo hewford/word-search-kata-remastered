@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app/SearchDirection.js"
+            "program": "${workspaceFolder}/app/solveWordSearch.js"
         }
     ]
 }

@@ -94,6 +94,7 @@ describe("Search Query should be able to find a word and its coordinates", () =>
             TIE: ["(3, 3)", "(2, 2)", "(1, 1)"],
             BIT: ["(3, 1)", "(2, 2)", "(1, 3)"]
         }
+        
         searchQuery.startSearchQuery('AIL', board)
         searchQuery.startSearchQuery('EAT', board)
         searchQuery.startSearchQuery('BEE', board)

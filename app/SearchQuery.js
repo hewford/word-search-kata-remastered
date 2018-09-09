@@ -1,5 +1,3 @@
-const Board = require('../app/Board')
-const configVariables = require('../config')
 const { SEARCH_RIGHT, SEARCH_LEFT, SEARCH_UP, SEARCH_DOWN, SEARCH_UP_AND_RIGHT, SEARCH_UP_AND_LEFT, SEARCH_DOWN_AND_LEFT, SEARCH_DOWN_AND_RIGHT } = require('../config/directions')
 
 const SearchDirection = require('../app/SearchDirection')
@@ -21,6 +19,7 @@ class SearchQuery {
       if (foundWord) {
         return foundWord
       }
+      
       foundWord = row.reduce((foundWord, letter, letterIndex) => {
 
         if (foundWord) {

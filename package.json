@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "testwatch": "jest --watchAll"
+    "testwatch": "jest --watchAll",
+    "testDetails": "npm test Board && npm test SearchQuery && npm test SearchDirection && npm test config",
+    "solution": "node app/solveWordSearch.js",
+    "start": "npm test Board && npm test SearchQuery && npm test SearchDirection && npm test config && node app/solveWordSearch.js"
   },
   "repository": {
     "type": "git",
