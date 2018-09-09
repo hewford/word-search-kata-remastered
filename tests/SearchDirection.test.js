@@ -47,6 +47,22 @@ describe("checkTargetCoordinate should take in a letter that is searching for, a
     test("searching a target coordinate should return null when the letters do not match", () => {
         expect(searchDirection.checkTargetedCoordinate('A', 'B', 2, 3)).toEqual(null)
     })
+})
 
+describe("search function in class SearchDirection takes in arguments: word, board, starting coordinates X, Y, and direction should find coordinates for word.", () => {
+
+    const board = [
+        ['Z', 'Z', 'Z', 'S'],
+        ['E', 'E', 'B', 'B'],
+        ['Z', 'A', 'I', 'L'],
+        ['Z', 'T', 'R', 'T']]
+
+    test("searching RIGHT should return the coordinates as an array of strings when the letters match", () => {
+        expect(searchDirection.search('AIL', board, 1, 2, SEARCH_RIGHT)).toEqual(['(1, 2)', '(2, 2)', '(3, 2)'])
+    })
+
+    test("searching LEFT should return the coordinates as an array of strings when the letters match", () => {
+        expect(searchDirection.search('BEE', board, 2, 1, SEARCH_LEFT)).toEqual(['(2, 1)', '(1, 1)', '(0, 1)'])
+    })
 })
 
