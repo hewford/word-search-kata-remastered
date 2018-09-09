@@ -35,6 +35,10 @@ class SearchQuery {
           }
 
           /* === SEARCH LEFT ===*/
+          const searchLeft = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_LEFT)
+          if (searchLeft) {
+            return searchLeft
+          }
 
           /* === SEARCH UP ===*/
 
