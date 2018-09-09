@@ -67,6 +67,10 @@ class SearchQuery {
           }
 
           /* === SEARCH UP & LEFT ===*/
+          const searchUpAndLeft = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_UP_AND_LEFT)
+          if (searchUpAndLeft) {
+            return searchUpAndLeft
+          }
 
           return foundWord
         } else {
