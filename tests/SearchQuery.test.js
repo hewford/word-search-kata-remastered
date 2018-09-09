@@ -27,4 +27,19 @@ describe("testing the set up of the search query", () => {
             return word
         }))
     })
+
+    describe("Search Query should be able to find a word and its coordinates", () => {
+
+        const board = [
+            ['Z', 'Z', 'Z', 'S'],
+            ['E', 'E', 'B', 'B'],
+            ['Z', 'A', 'I', 'L'],
+            ['Z', 'T', 'R', 'T']]
+
+        test("search query should be able to find the first letter", () => {
+            expect(searchQuery.startSearchQuery('A', board)).toEqual(["(1, 2)"])
+        })
+
+    })
+
 })
