@@ -14,20 +14,15 @@ class SearchQuery {
   }
 
   startSearchQuery(word, board) {
-
     const foundWord = board.reduce((foundWord, row, rowIndex) => {
-
       if (foundWord) {
         return foundWord
       }
       
       foundWord = row.reduce((foundWord, letter, letterIndex) => {
-
         if (foundWord) {
           return foundWord;
-
         } else if (word[0] === letter) {
-
           const searching = (direction, reducer) =>{
             if (reducer) {
               return reducer
@@ -47,7 +42,6 @@ class SearchQuery {
       }, null)
       
       return foundWord
-      
     }, null)
 
     if(!foundWord) {

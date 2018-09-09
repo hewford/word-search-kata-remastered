@@ -47,7 +47,6 @@ class SearchDirection {
                 coordinates.push(nextCoordinate)
             }
             return coordinates
-            
         }, [])
 
         if (word.length === foundWord.length) {
