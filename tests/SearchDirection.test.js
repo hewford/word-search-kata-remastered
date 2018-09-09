@@ -92,5 +92,9 @@ describe("search function in class SearchDirection takes in arguments: word, boa
     test("if searching cannot find the word, it should return null", () => {
         expect(searchDirection.search('BOB', board, 3, 1, SEARCH_DOWN_AND_LEFT)).toEqual(null)
     })
+
+    test("searching should not search a coordinate in a row that does not exist", () => {
+        expect(searchDirection.search('ZA', board, 0, 0, SEARCH_UP)).toEqual(null)
+    })
 })
 
