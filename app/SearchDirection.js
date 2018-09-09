@@ -27,9 +27,12 @@ class SearchDirection {
 
             case SEARCH_UP_AND_RIGHT:
                 return [letterIndex+1, rowIndex-i]
-
-            
         }
+    }
+
+    checkTargetedCoordinate(letterSearchingFor, letterQueried, coordinateX, coordinateY) {
+
+        return '(' + (coordinateX) + ', ' + (coordinateY) + ')'
     }
 }
 
