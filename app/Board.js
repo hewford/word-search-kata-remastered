@@ -1,7 +1,7 @@
-const configVariables = require('../config')
-
 class Board {
     constructor (words, letters) {
+        // words is a single string of words separated by spaces.
+        // letters is the board flattened to a single string.
         this.wordsToSearchFor = words ? words.split(' ') : []
         this.letters = letters ? letters.split(' ') : []
         this.board = []
