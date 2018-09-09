@@ -30,7 +30,7 @@ describe("testing the set up of the search query", () => {
 })
 
 describe("Search Query should be able to find a word and its coordinates", () => {
-    const words = ['A', 'AIL', 'BEE', 'RIB', 'EAT', 'ABS', 'EAR', 'TIE', 'BIT']
+    const words = ['AIL', 'BEE', 'RIB', 'EAT', 'ABS', 'EAR', 'TIE', 'BIT']
     let searchQuery
     const board = [
         ['Z', 'Z', 'Z', 'S'],
@@ -83,4 +83,26 @@ describe("Search Query should be able to find a word and its coordinates", () =>
         expect(searchQuery.startSearchQuery('BIT', board)).toEqual(["(3, 1)", "(2, 2)", "(1, 3)"])
     })
 
+    test("search query should be able to find all words and store them in the solution", () => {
+        const solution = {
+            AIL: ['(1, 2)', '(2, 2)', '(3, 2)'],
+            EAT: ['(1, 1)', '(1, 2)', '(1, 3)'],
+            BEE: ['(2, 1)', '(1, 1)', '(0, 1)'],
+            RIB: ['(2, 3)', '(2, 2)', '(2, 1)'],
+            ABS: ["(1, 2)", "(2, 1)", "(3, 0)"],
+            EAR: ["(0, 1)", "(1, 2)", "(2, 3)"],
+            TIE: ["(3, 3)", "(2, 2)", "(1, 1)"],
+            BIT: ["(3, 1)", "(2, 2)", "(1, 3)"]
+        }
+        searchQuery.startSearchQuery('AIL', board)
+        searchQuery.startSearchQuery('EAT', board)
+        searchQuery.startSearchQuery('BEE', board)
+        searchQuery.startSearchQuery('RIB', board)
+        searchQuery.startSearchQuery('ABS', board)
+        searchQuery.startSearchQuery('EAR', board)
+        searchQuery.startSearchQuery('TIE', board)
+        searchQuery.startSearchQuery('BIT', board)
+        
+        expect(solution).toEqual(searchQuery.solution)
+    })
 })
