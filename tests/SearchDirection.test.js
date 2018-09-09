@@ -88,5 +88,9 @@ describe("search function in class SearchDirection takes in arguments: word, boa
     test("searching DOWN and LEFT should return the coordinates as an array of strings when the letters match", () => {
         expect(searchDirection.search('BIT', board, 3, 1, SEARCH_DOWN_AND_LEFT)).toEqual(["(3, 1)", "(2, 2)", "(1, 3)"])
     })
+
+    test("if searching cannot find the word, it should return null", () => {
+        expect(searchDirection.search('BOB', board, 3, 1, SEARCH_DOWN_AND_LEFT)).toEqual(null)
+    })
 })
 
