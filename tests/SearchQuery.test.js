@@ -44,4 +44,8 @@ describe("Search Query should be able to find a word and its coordinates", () =>
     test("search query should be able to find the first letter and store in the state solution's matching property", () => {
         expect(searchQuery.solution['A']).toEqual(searchQuery.startSearchQuery('A', board))
     })
+
+    test("search query should be able to find all the coordinates of the word searching DOWN", () => {
+        expect(searchQuery.startSearchQuery('EAT', board)).toEqual(['(1, 1)', '(1, 2)', '(1, 3)'])
+    })
 })
