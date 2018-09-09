@@ -57,6 +57,10 @@ class SearchQuery {
           /* === SEARCH DOWN & LEFT ===*/
 
           /* === SEARCH UP & RIGHT ===*/
+          const searchUpAndRight = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_UP_AND_RIGHT)
+          if (searchUpAndRight) {
+            return searchUpAndRight
+          }
 
           /* === SEARCH UP & LEFT ===*/
 
