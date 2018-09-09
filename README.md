@@ -12,7 +12,7 @@ This is a javascript solution for the Word Search Kata.
 
 ## === ASSUMPTIONS ===
 
-#### 1. The board input will be one long string that will need to be transformed into a sqaure board.
+#### 1. The board input will be one long string that will need to be transformed into a square board.
 
 -   The input values were created from the website: <http://puzzlemaker.discoveryeducation.com/WordSearchSetupForm.asp>
 
