@@ -8,13 +8,13 @@ class SearchDirection {
                 return [letterIndex+i, rowIndex]
 
             case SEARCH_DOWN_AND_RIGHT:
-                return [letterIndex+1, rowIndex+i]
+                return [letterIndex+i, rowIndex+i]
 
             case SEARCH_DOWN:
                 return [letterIndex, rowIndex+i]
 
             case SEARCH_DOWN_AND_LEFT:
-                return [letterIndex-1, rowIndex+i]
+                return [letterIndex-i, rowIndex+i]
 
             case SEARCH_LEFT:
                 return [letterIndex-i, rowIndex]
@@ -26,7 +26,7 @@ class SearchDirection {
                 return [letterIndex, rowIndex-i]
 
             case SEARCH_UP_AND_RIGHT:
-                return [letterIndex+1, rowIndex-i]
+                return [letterIndex+i, rowIndex-i]
         }
     }
 

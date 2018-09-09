@@ -72,5 +72,21 @@ describe("search function in class SearchDirection takes in arguments: word, boa
     test("searching DOWN should return the coordinates as an array of strings when the letters match", () => {
         expect(searchDirection.search('EAT', board, 1, 1, SEARCH_DOWN)).toEqual(['(1, 1)', '(1, 2)', '(1, 3)'])
     })
+
+    test("searching UP and RIGHT should return the coordinates as an array of strings when the letters match", () => {
+        expect(searchDirection.search('ABS', board, 1, 2, SEARCH_UP_AND_RIGHT)).toEqual(["(1, 2)", "(2, 1)", "(3, 0)"])
+    })
+
+    test("searching DOWN and RIGHT should return the coordinates as an array of strings when the letters match", () => {
+        expect(searchDirection.search('EAR', board, 0, 1, SEARCH_DOWN_AND_RIGHT)).toEqual(["(0, 1)", "(1, 2)", "(2, 3)"])
+    })
+
+    test("searching UP and LEFT should return the coordinates as an array of strings when the letters match", () => {
+        expect(searchDirection.search('TIE', board, 3, 3, SEARCH_UP_AND_LEFT)).toEqual(["(3, 3)", "(2, 2)", "(1, 1)"])
+    })
+
+    test("searching DOWN and LEFT should return the coordinates as an array of strings when the letters match", () => {
+        expect(searchDirection.search('BIT', board, 3, 1, SEARCH_DOWN_AND_LEFT)).toEqual(["(3, 1)", "(2, 2)", "(1, 3)"])
+    })
 })
 
