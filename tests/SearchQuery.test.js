@@ -63,4 +63,8 @@ describe("Search Query should be able to find a word and its coordinates", () =>
         expect(searchQuery.startSearchQuery('BEE', board)).toEqual(['(2, 1)', '(1, 1)', '(0, 1)'])
     })
 
+    test("search query should be able to find all the coordinates of the word searching UP", () => {
+        expect(searchQuery.startSearchQuery('RIB', board)).toEqual(['(2, 3)', '(2, 2)', '(2, 1)'])
+    })
+
 })
