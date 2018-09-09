@@ -7,6 +7,7 @@ class Board {
         this.board = []
     }
 
+    // set up board to be an array with subarrays representing each row
     setUp () {
         const setUp = this.letters.reduce((setUp, letter, index) => {
             if (index % Math.sqrt(this.letters.length) === 0 && index !== 0) {
