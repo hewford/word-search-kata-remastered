@@ -85,8 +85,11 @@ class SearchQuery {
       
     }, null)
 
-    return this.solution[word] = foundWord
+    if(!foundWord) {
+      return this.solution[word] = 'word not found'
+    }
 
+    return this.solution[word] = foundWord
   }
 }
 
