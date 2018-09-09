@@ -25,7 +25,7 @@ class SearchQuery {
         }
       }
     }
-    return foundWord
+    return this.solution[word] = foundWord
   }
 }
 
