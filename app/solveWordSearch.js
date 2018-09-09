@@ -26,4 +26,4 @@ Object.keys(searchQuery.solution).forEach((key) => {
     })
     solution += '\n'
 })
-console.log(solution+'===========================================================================================\nThank you')
+console.log(solution+'===========================================================================================\nThank you\n')

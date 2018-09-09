@@ -27,53 +27,37 @@ class SearchQuery {
 
         } else if (word[0] === letter) {
 
-          /* === SEARCH RIGHT ===*/
-          const searchRight = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_RIGHT)
-          if (searchRight) {
-            return searchRight
+          const searching = (direction) =>{
+            if (foundWord) {
+              return foundWord
+            } else {
+              return searchDirection.search(word, board, letterIndex, rowIndex, direction)
+            }
           }
+
+          /* === SEARCH RIGHT ===*/
+          foundWord = searching(SEARCH_RIGHT)
 
           /* === SEARCH LEFT ===*/
-          const searchLeft = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_LEFT)
-          if (searchLeft) {
-            return searchLeft
-          }
+          foundWord = searching(SEARCH_LEFT)
 
           /* === SEARCH UP ===*/
-          const searchUp = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_UP)
-          if (searchUp) {
-            return searchUp
-          }
+          foundWord = searching(SEARCH_UP)
 
           /* === SEARCH DOWN ===*/
-          const searchDown = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_DOWN)
-          if (searchDown) {
-            return searchDown
-          }
+          foundWord = searching(SEARCH_DOWN)
 
           /* === SEARCH DOWN & RIGHT ===*/
-          const searchDownAndRight = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_DOWN_AND_RIGHT)
-          if (searchDownAndRight) {
-            return searchDownAndRight
-          }
+          foundWord = searching(SEARCH_DOWN_AND_RIGHT)
 
           /* === SEARCH DOWN & LEFT ===*/
-          const searchDownAndLeft = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_DOWN_AND_LEFT)
-          if (searchDownAndLeft) {
-            return searchDownAndLeft
-          }
+          foundWord = searching(SEARCH_DOWN_AND_LEFT)
 
           /* === SEARCH UP & RIGHT ===*/
-          const searchUpAndRight = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_UP_AND_RIGHT)
-          if (searchUpAndRight) {
-            return searchUpAndRight
-          }
+          foundWord = searching(SEARCH_UP_AND_RIGHT)
 
           /* === SEARCH UP & LEFT ===*/
-          const searchUpAndLeft = searchDirection.search(word, board, letterIndex, rowIndex, SEARCH_UP_AND_LEFT)
-          if (searchUpAndLeft) {
-            return searchUpAndLeft
-          }
+          foundWord = searching(SEARCH_UP_AND_LEFT)
 
           return foundWord
         } else {
