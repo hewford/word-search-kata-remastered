@@ -32,7 +32,7 @@ class SearchDirection {
 
     search (word, board, letterIndex, rowIndex, direction) {
         
-        const foundWord = word.split('').reduce((coordinates, item, i) => {
+        const foundWord = word.split('').reduce((coordinates, letter, i) => {
 
             let targetCoordinate = this.targetCoordinates(rowIndex, letterIndex, i, direction)
 
@@ -40,7 +40,7 @@ class SearchDirection {
                 return coordinates
             }
             
-            const nextCoordinate = this.checkTargetedCoordinate(word[i], board[targetCoordinate[1]][targetCoordinate[0]], targetCoordinate[0], targetCoordinate[1])
+            const nextCoordinate = this.checkTargetedCoordinate(letter, board[targetCoordinate[1]][targetCoordinate[0]], targetCoordinate[0], targetCoordinate[1])
 
             if (nextCoordinate){
                 coordinates.push(nextCoordinate)
