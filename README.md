@@ -1,4 +1,4 @@
-# hew-word-search-kata
+# hew-word-search-kata-REMASTERED!
 
 This is a javascript solution for the Word Search Kata.
 
